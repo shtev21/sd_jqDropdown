@@ -18,7 +18,18 @@
         var defaultVal = $parent.find('.' + settings.activeClass).text()
 
         // Creating a hidden input field, useful for form submission
-        var $hiddenInput = $('<input type="hidden" value="' + defaultVal + '" >')        
+        var $hiddenInput = $('<input type="hidden" value="' + defaultVal + '" >')
+
+        // Add important inline styles
+        $parent.css({
+            position: 'relative'
+        })
+
+        $menu.css({
+            position: 'absolute',
+            top: $heading.outerHeight(),
+            width: $heading.innerWidth()
+        })
  
         // Initialising the menus
         $menu.hide()
