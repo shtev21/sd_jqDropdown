@@ -1,6 +1,5 @@
 .selectBox {
-	position: relative;
-	width: 100px;
+	width: 120px;
 	font-family: sans-serif;
 	font-size: 12px;
 }
@@ -10,8 +9,7 @@
 	color: #0099cc;
 	height: 30px;
 	line-height: 30px;
-	cursor: pointer;	
-	width: 100px;
+	cursor: pointer;
 	padding: 0 10px;
 	font-size: 1.2em;
 }
@@ -19,9 +17,6 @@
 .selectBox .menu {
 	list-style-type: none;
 	padding: 0;
-	position: absolute;
-	width: 120px;
-	top: 31px;
 	margin: 0;
 	border: 1px solid #0099cc;
 }
