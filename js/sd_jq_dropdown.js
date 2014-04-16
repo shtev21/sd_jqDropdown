@@ -17,8 +17,6 @@
         var $menu = $parent.find(settings.list)
         var defaultVal = $parent.find('.' + settings.activeClass).text()
 
-        console.log($heading.innerWidth())
-
         // Creating a hidden input field, useful for form submission
         var $hiddenInput = $('<input type="hidden" value="' + defaultVal + '" >')
 
