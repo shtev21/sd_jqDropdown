@@ -1,6 +1,6 @@
 (function( $ ) {
  
-    $.fn.ssDropDownMenu = function( options ) {
+    $.fn.sdDropdown = function( options ) {
  
         var settings = $.extend({
             // These are the defaults.
@@ -63,4 +63,4 @@
  
 }( jQuery ));
  
-$('.selectBox').ssDropDownMenu();
+$('.selectBox').sdDropdown();
