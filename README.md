@@ -1,8 +1,10 @@
 sd_jqDropdown
 =============
 
-**Version:** *0.1.0*
+**Version:** *0.1.1*
 
 A lightweight and simple cross browser select box replacement using jQuery.
 Still *very* in beta and in need of much testing.
 I will be working on this quite extensively over the coming weeks.
+
+v0.1.1 Adds the ability to differentiate between values and plaintext.
