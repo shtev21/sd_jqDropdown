@@ -28,7 +28,8 @@
         $menu.css({
             position: 'absolute',
             top: $heading.outerHeight(),
-            width: $heading.innerWidth()
+            width: $heading.innerWidth(),
+            overflow: 'hidden'
         })
  
         // Initialising the menus
