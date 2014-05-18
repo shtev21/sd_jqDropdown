@@ -90,6 +90,4 @@
  
 }( jQuery ));
  
-$('.selectBox').sdDropdown({
-    mode: 'popUp'
-});
+$('.selectBox').sdDropdown();
