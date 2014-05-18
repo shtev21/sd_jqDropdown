@@ -10,7 +10,7 @@ I will be working on this quite extensively over the coming weeks.
 ####Options
 sd_jqDropdown allows you to choose between two display modes, ```dropDown``` or ```popUp```
 
-To simply pass either of the above values into the mode to choose it.
+To choose the mode, simply pass either of the above values into the mode parameter.
 
 ```js
 sdDropdown({
