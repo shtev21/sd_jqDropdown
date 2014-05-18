@@ -37,7 +37,9 @@
         menuStyles[cssPosition] = $heading.outerHeight();
 
         // Creating a hidden input field, useful for form submission
-        var $hiddenInput = $('<input type="hidden" value="' + defaultVal + '" >');
+        var hiddenEl = document.createElement('input');
+        $(hiddenEl).attr('type', 'hidden');
+        $(hiddenEl).val(defaultVal);
 
         // Add important inline styles
         $parent.css({
@@ -73,7 +75,7 @@
 
             // Update the heading text and the hidden input values
             $heading.text(newTxt)
-            $parent.find($hiddenInput).attr('value', newVal)
+            $(hiddenEl).attr('value',newVal);
 
             // Slide transition and then add the active class to the current active item
             $menu.slideUp(settings.speed, settings.easing, function(){
@@ -81,7 +83,7 @@
             })
         })
 
-        $parent.append($hiddenInput)
+        $parent.append(hiddenEl)
  
         // Chainable function baby!
         return this;
