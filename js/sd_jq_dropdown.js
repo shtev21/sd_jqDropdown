@@ -92,4 +92,4 @@
  
 }( jQuery ));
  
-$('.selectBox').sdDropdown();
+$('#sdSelect').sdDropdown();
