@@ -8,15 +8,33 @@
             list: 'ul',
             item: 'li',
             activeClass: 'selected',
-            transitionSpeed: 200
+            speed: 200,
+            mode: 'dropDown',
+            easing: 'swing'
         }, options );
  
         // Setting up some shorthands
         var $parent = this;
         var $heading = $parent.find(settings.heading);
         var $menu = $parent.find(settings.list);
+
+        //  Defaults for text and value
         var defaultTxt = $parent.find('.' + settings.activeClass).text();
         var defaultVal = $parent.find('.' + settings.activeClass).attr('data-value');
+
+        //  Animation style, default is dropdown popUp available
+        var cssPosition = settings.mode == 'popUp' ? 'bottom' : 'top';
+
+        //  Building an object for the menu css
+        var menuStyles = {};
+
+        //  Fleshing out the array for the menu css
+        menuStyles['position']  = 'absolute';
+        menuStyles['overflow']  = 'hidden';
+        menuStyles['width'] = $heading.innerWidth();
+
+        // Here is where we set the top or bottom property
+        menuStyles[cssPosition] = $heading.outerHeight();
 
         // Creating a hidden input field, useful for form submission
         var $hiddenInput = $('<input type="hidden" value="' + defaultVal + '" >');
@@ -26,12 +44,7 @@
             position: 'relative'
         })
 
-        $menu.css({
-            position: 'absolute',
-            top: $heading.outerHeight(),
-            width: $heading.innerWidth(),
-            overflow: 'hidden'
-        })
+        $menu.css(menuStyles);
  
         // Initialising the menus
         $menu.hide();
@@ -40,13 +53,13 @@
         // Hides the menu when it loses focus
         $(document).mouseup(function (e) {
             if (!$parent.is(e.target) && $parent.has(e.target).length === 0) {
-                $menu.slideUp(settings.transitionSpeed);
+                $menu.slideUp(settings.speed);
             }
         });
  
         // Toggles the menu when clicking on the heading
         $parent.on('click', settings.heading, function(){
-            $menu.slideToggle(settings.transitionSpeed);
+            $menu.slideToggle(settings.speed, settings.easing);
         });
  
         // Changes the value of the heading and closes the menu on click of an item
@@ -63,7 +76,7 @@
             $parent.find($hiddenInput).attr('value', newVal)
 
             // Slide transition and then add the active class to the current active item
-            $menu.slideUp(settings.transitionSpeed, function(){
+            $menu.slideUp(settings.speed, settings.easing, function(){
                 $currentItem.addClass(settings.activeClass)
             })
         })
@@ -77,4 +90,6 @@
  
 }( jQuery ));
  
-$('.selectBox').sdDropdown();
+$('.selectBox').sdDropdown({
+    mode: 'popUp'
+});
